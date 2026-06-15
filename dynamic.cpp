@@ -11,6 +11,11 @@ class number{
         *x = num;
     }
 
+    ~number(){
+        cout << "DESTROYED" <<endl;
+        delete x;
+    }
+
     void print(){
         cout << *x << endl;
     }
@@ -18,8 +23,12 @@ class number{
 };
 
 int main(){
+    {
     number n = number(123);
     n.print();
+    }
+    
+    
     //new int; //"new" can be used to request memory//
     int* ptr = new int; //ptr is on the stack that points to int on heap
     *ptr = 100;
@@ -34,7 +43,7 @@ int main(){
                         //leading to memory leak and eventually crahs
     }*/
 
-    delete ptr; // if new is used end with delete to return the memory to computer
+    //delete ptr; // if new is used end with delete to return the memory to computer
 
     
     return 0;
