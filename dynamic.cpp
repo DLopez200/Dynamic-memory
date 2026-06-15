@@ -1,9 +1,25 @@
 #include <iostream>
 using namespace std;
 
+class number{
+    private:
+    int* x;
+
+    public:
+    number(int num){
+        x = new int;
+        *x = num;
+    }
+
+    void print(){
+        cout << *x << endl;
+    }
+
+};
 
 int main(){
-
+    number n = number(123);
+    n.print();
     //new int; //"new" can be used to request memory//
     int* ptr = new int; //ptr is on the stack that points to int on heap
     *ptr = 100;
